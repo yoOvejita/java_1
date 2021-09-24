@@ -172,8 +172,8 @@ public class Principal {
 		
 		System.out.println("Ingrese numero 1:");
 		int numero1 = leer.nextInt();
-		System.out.println("Ingrese numero 2:");
-		int numero2 = leer.nextInt();
+		//System.out.println("Ingrese numero 2:");
+		int numero2 = 5;//leer.nextInt();
 		int resp = numero1 + numero2;
 		System.out.println("La suma es: " + resp);
 		
@@ -202,11 +202,27 @@ public class Principal {
 		/********************************************
 		 * 			DO WHILE (hacer mientras)		*
 		 *******************************************/
+		resp = 8;
+		do {
+			System.out.println("Estoy en el DO - WHILE");
+			resp--;//resp = resp - 1;
+		}while(resp > 5);
 		
 		/********************************************
 		 * 				  FOR (para)				*
 		 *******************************************/
-		
+		int i;
+		for(i=0; i<10; i++) {
+			System.out.println("En FOR: "+ i);
+			if(5 > 2) {
+				
+			}else {
+				for(int j= 1; j<4;j++) {
+					
+				}
+			}
+		}
+		System.out.println("Este es i: "+ i);
 		
 		/********************************************
 		 ********************************************
@@ -214,11 +230,66 @@ public class Principal {
 		 ********************************************
 		 *******************************************/
 		
+		//Método que no devuelve nada
+		saludo();
+		
+		//Método que devuleve un valor
+		String txt = obtenerSaludo();
+		System.out.println(txt);
+		
+		//Método que recibbe parámetros
+		decirEdad(18);
+		restar(15,4);
+		int r = sumar(14,6);
+		System.out.println("La suma es: " + r);
+		
+		mostrarInformacion("Pepe", 21, 1.8, 59.2);
+		mostrarInformacion("Asd3456", 5600, 1.79, 234);
 		/********************************************
 		 ********************************************
 		 * 	  PROGRAMACIÓN ORIENTADA A OBJETOS		*
 		 ********************************************
 		 *******************************************/
+		Persona p = new Persona();
+		p.setNombre("Pepe");
+		System.out.println(p.getNombre() + ", " + p.getEdad());
+		
+		Persona q = new Persona();
+		q.setNombre("Ana");
+		p.caminar();
+		q.caminar();
+	}
+
+	private static void mostrarInformacion(String nombre, int edad, double estatura, double peso) {
+		String msg = "Nombre: ";
+		msg += nombre;
+		msg += ", edad: " + edad;
+		msg += ", tiene una estatura de: " + estatura + " metros";
+		msg += " y su peso es de " + peso + "Kg.";
+		System.out.println(msg);
+	}
+
+	private static int sumar(int n1, int n2) {
+		//int resultado = n1 + n2;
+		return n1 + n2;
+	}
+
+	private static void restar(int num1, int num2) {
+		System.out.println("La resta es: " + (num1 - num2));
+	}
+
+	private static void decirEdad(int edad) {
+		System.out.println("Tu edad es " + edad);
+	}
+
+	private static String obtenerSaludo() {
+		String hola = "Hola a todos!!!";
+		return hola;
+	}
+
+	private static void saludo() {
+		String hola = "Hola a todos!";
+		System.out.println(hola);
 	}
 
 	
