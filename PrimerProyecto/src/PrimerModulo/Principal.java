@@ -258,6 +258,31 @@ public class Principal {
 		q.setNombre("Ana");
 		p.caminar();
 		q.caminar();
+		
+		Persona q2 = new Persona("Pepito");
+		Persona q3 = new Persona(20, 123456);
+		System.out.println(q2.getNombre() + ", " + p.getCi());
+		
+		//Herencia
+		
+		Estudiante est1;
+		est1 = new Estudiante();
+		est1.setNombre("Diana");
+		est1.caminar();
+		Estudiante est2 = new Estudiante(654321, false);
+		est2.caminar();
+		
+		Estudiante est3 = new Estudiante(131313, false, "Erick", "Ya volví.");
+		est3.decirAntiguedad();
+		est3.estudiar();
+		
+		Persona personaX = q3;
+		Persona personaY = est3;
+		est3.caminar();
+		((Persona)est3).caminar();
+		//Estudiante estX = (Estudiante) q;//error de cast
+		((Estudiante)personaY).estudiar();
+		
 	}
 
 	private static void mostrarInformacion(String nombre, int edad, double estatura, double peso) {

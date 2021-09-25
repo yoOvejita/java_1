@@ -1,11 +1,40 @@
 package PrimerModulo;
 
 public class Persona {
-	private String nombre;
+	protected String nombre;
 	private double estatura;
 	private int edad;
 	private double peso;
 	private int ci;
+	
+	public Persona() {
+		estatura = 1.7;
+		edad = 19;
+		peso= 60;
+		nombre = "NN";
+	}
+	
+	public Persona(String nombre, double estatura, int edad, double peso, int ci) {
+		super();
+		this.nombre = nombre;
+		this.estatura = estatura;
+		this.edad = edad;
+		this.peso = peso;
+		this.ci = ci;
+	}
+
+	public Persona(String nnn) {
+		nombre = nnn;
+		estatura = 1.9;
+	}
+	public Persona(int ci) {
+		this.ci = ci;
+		estatura = 1.9;
+	}
+	public Persona(int edad, int ci) {
+		this.edad = edad;
+		this.ci = ci;
+	}
 	public String getNombre() {
 		return nombre;
 	}
