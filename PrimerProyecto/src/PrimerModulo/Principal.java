@@ -2,9 +2,15 @@ package PrimerModulo;
 
 import java.util.Scanner;
 
+import otrasClases.Empleado;
+import otrasClases.Mamifero;
+import otrasClases.SerHumano;
+import otrasClases.subColegial;
+import otrasClases.Matematica;
+
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void main(String[] parametros) {
 		//Comentario de una sola linea
 		
 		// TODO Comentario de una sola linea para remarcar tareas a hacer (TO DO)
@@ -283,6 +289,47 @@ public class Principal {
 		//Estudiante estX = (Estudiante) q;//error de cast
 		((Estudiante)personaY).estudiar();
 		
+		
+		/*
+		 * Clases abstractas
+		 */
+		
+		Empleado emp1;
+		emp1 = new Empleado();
+		emp1.caminar();
+		emp1.decirNombre("Pepe", "Pepales");
+		
+		/*
+		 * Clases finales
+		 * */
+		
+		subColegial sc = new subColegial();//ver contenido de la clase subColegial
+		
+		/*
+		 * Interfaces
+		 * */
+		
+		SerHumano ser = new Empleado();
+		Mamifero mm = new Empleado();
+		
+		
+		mm.cantidadOjos();
+		
+		/*
+		 * Clases estáticas
+		 */
+		System.out.println(new Empleado().cantidadOjos());
+		
+		double var1 = Math.pow(4, 2);
+		
+		System.out.println(var1);
+		
+		int var2 = Matematica.potencia(4, 2);
+		System.out.println(var2);
+		
+		/*Parametros del programa
+		 * */
+		System.out.println("Este texto vino como parametro: " +parametros[0]);
 	}
 
 	private static void mostrarInformacion(String nombre, int edad, double estatura, double peso) {
